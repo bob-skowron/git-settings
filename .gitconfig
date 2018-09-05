@@ -1,0 +1,22 @@
+[user]
+	email = %email_address%
+	name = Bob Skowron
+[pull]
+	rebase = true
+[core]
+	excludesfile = C:/Users/bob/.gitignore_global
+	editor = 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession
+[alias]
+	logone = log --decorate --graph --oneline
+	logfuller = log --decorate --graph --format=fuller
+	logdiff = log --decorate --graph -p
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	st = status -sb
+	d = diff
+	co = checkout
+	cob = checkout -b
+	cam = commit -a -m
+	
+	# list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+	
