@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# set sparse checkout on
+git config core.sparseCheckout true
+
+# set local vars and shift to get array
+wtName=$1
+branchName=$2
+shift 2
+
+# create the worktree
+git worktree add ../WT-$wtName -b $branchName
+
+# make an info directory
+mkdir .git/worktrees/WT-$wtName/info
+
+# move to the folder
+cd ../WT-$wtName
+
+# set sparse checkout
+git sparse-checkout set ${@}
